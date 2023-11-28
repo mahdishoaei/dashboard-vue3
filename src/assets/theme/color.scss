@@ -1,0 +1,27 @@
+@import '../scss/global/_theme_colors';
+
+
+.app-color-primary{
+    color: var(--primary-);
+}
+.app-color-secondary{
+    color: var(--secondary-);
+}
+.app-color-danger{
+    color: var(--danger-);
+}
+.app-color-gray{
+    color: var(--gray-);
+}
+.app-color-light{
+    color: var(--light-);
+}
+.app-color-white{
+    color: var(--white-);
+}
+.app-color-dark{
+    color: var(--dark-);
+}
+.app-color-info{
+    color: var(--info-);
+}

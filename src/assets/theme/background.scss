@@ -1,0 +1,45 @@
+@import '../scss/global/_theme_colors';
+
+
+.app-bg-primary{
+    background: var(--primary-);
+    color: var(--white-);
+    transition: 0.5s;
+}
+.app-bg-secondary{
+    background: var(--secondary-);
+    color: var(--white-);
+    transition: 0.5s;
+}
+.app-bg-danger{
+    background: var(--danger-);
+    color: var(--white-);
+    transition: 0.5s;
+}
+.app-bg-gray{
+    background: var(--gray-);
+    color: var(--dark-);
+    transition: 0.5s;
+}
+.app-bg-light{
+    background: var(--light-);
+    color: var(--dark-);
+    transition: 0.5s;
+}
+.app-bg-white{
+    background: var(--white-);
+    color: var(--dark-);
+    transition: 0.5s;
+}
+.app-bg-dark{
+    background: var(--dark-);
+    color: var(--white-);
+    transition: 0.5s;
+}
+.app-bg-blue{
+    background: var(--blue-);
+    color: var(--white-);
+    transition: 0.5s;
+}
+
+
