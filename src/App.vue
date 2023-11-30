@@ -1,6 +1,5 @@
 <template>
-<div class="app-container">
-  <h3>hello world...</h3>
-</div>
+  <div class="app-container">
+    <RouterView />
+  </div>
 </template>
-
