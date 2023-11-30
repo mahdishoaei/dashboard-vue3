@@ -1,0 +1,12 @@
+{
+  "dashboard": {},
+  "users": [
+    {
+      "id": 1000,
+      "email": "admin@yahoo.com",
+      "password": "68002100",
+      "role": "admin",
+      "token": "D5IV768zvvBLq1y5MxCWbTKOuWIsIM"
+    }
+  ]
+}
