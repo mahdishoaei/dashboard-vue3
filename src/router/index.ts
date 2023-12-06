@@ -3,9 +3,35 @@ import HomeView from "../views/HomeView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/dashboard",
+    path: "/",
     name: "dashboard",
-    component: () => import("@/pages/dashboard/index.vue"),
+    redirect: "/dashboard",
+    component: () => import("@/layout/app/index.vue"),
+    children: [
+      {
+        path: "/dashboard",
+        name: "dashboard",
+        component: () => import("@/pages/dashboard/index.vue"),
+      },
+      {
+        path: "/payment",
+        name: "payment",
+        component: () => import("@/pages/payment/index.vue"),
+      },
+    ],
+  },
+  {
+    path: "/auth",
+    name: "auth",
+    redirect: "/auth/login",
+    component: () => import("@/layout/auth/index.vue"),
+    children: [
+      {
+        path: "/auth/login",
+        name: "login",
+        component: () => import("@/pages/auth/login/index.vue"),
+      },
+    ],
   },
 ];
 

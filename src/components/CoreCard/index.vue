@@ -18,6 +18,7 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
 import { applicationTheme } from '@/stores/applicationTheme'
 const ThemeDS = applicationTheme()
 

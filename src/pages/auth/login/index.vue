@@ -1,12 +1,11 @@
 <script setup>
-definePageMeta({
-  layout: "auth",
-});
-
+import { ref } from "vue";
+import CoreInput from "@/components/CoreInput/index.vue";
+import CoreBtn from "@/components/CoreBtn/index.vue";
 import { validEmail, validPassword } from "@/utils/validate";
-import { applicationUserData } from "@/stores/applicationUserData.ts";
+// import { applicationUserData } from "@/stores/applicationUserData.ts";
 
-const userDataSource = applicationUserData();
+// const userDataSource = applicationUserData();
 const form = ref({
   email: "",
   password: "",
@@ -22,30 +21,30 @@ const error = ref({
   },
 });
 
-const handleLogin = () => {
-  let AccessToLogin = true;
-  if (!validEmail(form.value.email)) {
-    AccessToLogin = false;
-    error.value.email.status = true;
-    error.value.email.message = "Invalid email !!!";
-  } else {
-    AccessToLogin = true;
-    error.value.email.status = false;
-    error.value.email.message = "";
-  }
-  if (!validPassword(form.value.password)) {
-    AccessToLogin = false;
-    error.value.password.status = true;
-    error.value.password.message = "Password  must be more than 8 charecter";
-  } else {
-    AccessToLogin = true;
-    error.value.password.status = false;
-    error.value.password.message = "";
-  }
-  if (AccessToLogin) {
-    userDataSource.checkUserAuthentication(form.value);
-  }
-};
+// const handleLogin = () => {
+//   let AccessToLogin = true;
+//   if (!validEmail(form.value.email)) {
+//     AccessToLogin = false;
+//     error.value.email.status = true;
+//     error.value.email.message = "Invalid email !!!";
+//   } else {
+//     AccessToLogin = true;
+//     error.value.email.status = false;
+//     error.value.email.message = "";
+//   }
+//   if (!validPassword(form.value.password)) {
+//     AccessToLogin = false;
+//     error.value.password.status = true;
+//     error.value.password.message = "Password  must be more than 8 charecter";
+//   } else {
+//     AccessToLogin = true;
+//     error.value.password.status = false;
+//     error.value.password.message = "";
+//   }
+//   // if (AccessToLogin) {
+//   //   userDataSource.checkUserAuthentication(form.value);
+//   // }
+// };
 </script>
 
 <template>
@@ -81,7 +80,7 @@ const handleLogin = () => {
   </div>
 </template>
 
-<style scoped>
+<!-- <style scoped>
 .login-container {
   width: 100%;
   height: 100vh;
@@ -100,4 +99,4 @@ const handleLogin = () => {
   width: 330px;
   height: 300px;
 }
-</style>
+</style> -->

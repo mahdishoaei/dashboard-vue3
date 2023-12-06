@@ -20,10 +20,7 @@
       />
     </div>
     <div class="w-100 d-flex flex-column justify-center align-center mt-3">
-      <img
-        src="/images/profile-men.jpg"
-        class="profile-img"
-      />
+      <img src="@/assets/images/profile-men.jpg" class="profile-img" />
       <span class="app-font-size-14 app-font-weight-600 pt-2" v-if="isOpen"
         >admin@yahoo.com</span
       >
@@ -32,13 +29,13 @@
       <div
         v-for="item in sidebarItems"
         :key="item.id"
-        class="d-flex mt-5 px-2 py-1 rounded app_pointer align-center"
+        class="app-flex mt-5 px-2 py-1 app_border_radius app_pointer"
         :class="{ 'app-bg-gray': Route.name === `${item.path}` }"
         @click="navigateTo(`${item.path}`)"
       >
         <img style="width: 25px; height: 25px" :src="`${item.icon}`" />
         <span
-          class="app-font-size-12 app-font-weight-400 px-2 pt-1"
+          class="app-font-size-14 app-font-weight-400 px-2 pt-1"
           v-if="isOpen"
           >{{ item.name }}</span
         >
@@ -47,11 +44,13 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
+import { computed, ref } from "vue";
 import { applicationTheme } from "@/stores/applicationTheme";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 
 const Route = useRoute();
+const Router = useRouter();
 const ThemeDS = applicationTheme();
 
 const isOpen = ref(true);
@@ -61,51 +60,55 @@ const sidebarItems = ref([
     id: "0",
     name: "Dashboard",
     path: "dashboard",
-    icon: "icons/dashboard.svg",
+    icon: "/icons/dashboard.svg",
   },
   {
     id: "1",
     name: "Tasks",
     path: "tasks",
-    icon: "icons/task.svg",
+    icon: "/icons/task.svg",
   },
   {
     id: "2",
     name: "Employes",
     path: "employes",
-    icon: "icons/employes.svg",
+    icon: "/icons/employes.svg",
   },
   {
     id: "3",
     name: "Payment",
     path: "payment",
-    icon: "icons/payment.svg",
+    icon: "/icons/payment.svg",
   },
   {
     id: "4",
     name: "Products",
     path: "products",
-    icon: "icons/product.svg",
+    icon: "/icons/product.svg",
   },
   {
     id: "5",
     name: "warehouse",
     path: "warehouse",
-    icon: "icons/warehouse.svg",
+    icon: "/icons/warehouse.svg",
   },
   {
     id: "6",
     name: "Setting",
     path: "setting",
-    icon: "icons/setting.svg",
+    icon: "/icons/setting.svg",
   },
 ]);
+
+const navigateTo = (param) => {
+  Router.push(param);
+};
 
 const changeSidebarStatus = () => {
   isOpen.value = !isOpen.value;
 };
 
-const ThemeStatus = computed<string>(() => {
+const ThemeStatus = computed(() => {
   return ThemeDS.theme;
 });
 </script>
