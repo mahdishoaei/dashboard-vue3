@@ -1,31 +1,31 @@
-.app-flex{
+.app-flex {
   display: flex;
 }
 
-.app-flex-column{
+.app-flex-column {
   flex-direction: column;
 }
 
-.app-justify-center{
+.app-justify-center {
   justify-content: center;
 }
 
-.app-justify-start{
+.app-justify-start {
   justify-content: start;
 }
 
-.app-justify-end{
+.app-justify-end {
   justify-content: end;
 }
 
-.app-align-center{
-  justify-items: center;
+.app-align-center {
+  align-items: center;
 }
 
-.app-align-start{
-  justify-items: start;
+.app-align-start {
+  align-items: start;
 }
 
-.app-align-end{
-  justify-items: end;
+.app-align-end {
+  align-items: end;
 }

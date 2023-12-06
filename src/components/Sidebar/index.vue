@@ -19,9 +19,9 @@
         class="app_pointer"
       />
     </div>
-    <div class="w-100 d-flex flex-column justify-center align-center mt-3">
+    <div class="app-flex app-flex-column app-justify-center app-align-center">
       <img src="@/assets/images/profile-men.jpg" class="profile-img" />
-      <span class="app-font-size-14 app-font-weight-600 pt-2" v-if="isOpen"
+      <span class="app-font-size-12 app-font-weight-600 pt-2" v-if="isOpen"
         >admin@yahoo.com</span
       >
     </div>
@@ -30,7 +30,7 @@
         v-for="item in sidebarItems"
         :key="item.id"
         class="app-flex mt-5 px-2 py-1 app_border_radius app_pointer"
-        :class="{ 'app-bg-gray': Route.name === `${item.path}` }"
+        :class="{ 'app-bg-light': Route.name === `${item.path}` }"
         @click="navigateTo(`${item.path}`)"
       >
         <img style="width: 25px; height: 25px" :src="`${item.icon}`" />

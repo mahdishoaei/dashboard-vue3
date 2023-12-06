@@ -1,5 +1,5 @@
 <template>
-  <div class="wh app-bg-primary app-flex">
+  <div class="wh app-flex">
     <div>
       <sidebar />
     </div>
