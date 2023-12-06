@@ -48,24 +48,27 @@ const error = ref({
 </script>
 
 <template>
-  <div class="login-container">
-    <div class="form-container d-flex flex-column px-6 py-8">
-      <span class="app-font-size-16 app-font-weight-500 app-color-white">
-        Sign in</span
+  <div class="login-page-container">
+    <div class="w-50 app-flex app-justify-center app-align-center">
+      <img src="/images/auth-bg.png" alt="image" />
+    </div>
+    <div class="w-50 app-flex app-flex-column app-justify-center px-8">
+      <span class="app-font-size-18 app-font-weight-500 app-color-primary pb-6"
+        >SignIn To Dashboard</span
       >
       <CoreInput
-        class="mt-6"
-        label="Email"
+        class="mt-2 mb-2"
         v-model="form.email"
         :error="error.email.status"
         :messageError="error.email.message"
+        placeholder="Email"
       />
       <CoreInput
-        class="mt-2"
-        label="Password"
+        class="mt-2 mb-2"
         v-model="form.password"
         :error="error.password.status"
         :messageError="error.password.message"
+        placeholder="Password"
       />
       <CoreBtn
         class="mt-4"
@@ -73,30 +76,38 @@ const error = ref({
         name="submit"
         width="85px"
         height="30px"
-        borderRadius="5px"
-        @click="handleLogin"
+        borderRadius="6px"
       />
+      <div
+        class="w-100 app-flex app-flex-column app-justify-center app-align-center mt-10"
+      >
+        <span class="app-color-gray app-font-size-10 app-font-weight-100 pt-2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit
+        </span>
+        <span class="app-color-gray app-font-size-10 app-font-weight-100 pt-2">
+          Version 1.0.0
+        </span>
+        <div class="app-flex mt-2">
+          <img class="icon" src="/icons/instagram.svg" alt="image" />
+          <img class="icon" src="/icons/youtube.svg" alt="image" />
+          <img class="icon" src="/icons/instagram.svg" alt="image" />
+          <img class="icon" src="/icons/instagram.svg" alt="image" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-<!-- <style scoped>
-.login-container {
+<style scoped>
+.login-page-container {
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url("/images/auth-bg.jpg");
-  background-size: cover;
-  background-attachment: fixed;
 }
-.form-container {
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
-  border-radius: 10px;
-  width: 330px;
-  height: 300px;
+
+.icon {
+  width: 15px;
+  height: 15px;
+  margin: 5px 5px;
 }
-</style> -->
+</style>
