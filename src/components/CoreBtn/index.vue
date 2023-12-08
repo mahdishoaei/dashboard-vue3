@@ -86,12 +86,13 @@ button {
 }
 
 .outline-primary-hover {
-  border: 1px solid #fd7403;
-  background: none;
-  color: #fd7403;
+  border: 1px solid #4b3ae6;
+  background: #4b3ae6;
+  color: #ffffff;
   transition: 1s;
 }
 .outline-primary-hover:hover {
-  background: #fd740357;
+  background: #ffffff;
+  color: #4b3ae6;
 }
 </style>

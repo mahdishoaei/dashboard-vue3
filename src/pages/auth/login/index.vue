@@ -71,8 +71,8 @@ const handleLogin = () => {
         placeholder="Password"
       />
       <CoreBtn
-        class="mt-4"
-        background="primary"
+        class="mt-4 app_pointer"
+        background="outline-primary-hover"
         name="submit"
         width="85px"
         height="30px"
