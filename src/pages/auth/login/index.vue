@@ -21,30 +21,30 @@ const error = ref({
   },
 });
 
-// const handleLogin = () => {
-//   let AccessToLogin = true;
-//   if (!validEmail(form.value.email)) {
-//     AccessToLogin = false;
-//     error.value.email.status = true;
-//     error.value.email.message = "Invalid email !!!";
-//   } else {
-//     AccessToLogin = true;
-//     error.value.email.status = false;
-//     error.value.email.message = "";
-//   }
-//   if (!validPassword(form.value.password)) {
-//     AccessToLogin = false;
-//     error.value.password.status = true;
-//     error.value.password.message = "Password  must be more than 8 charecter";
-//   } else {
-//     AccessToLogin = true;
-//     error.value.password.status = false;
-//     error.value.password.message = "";
-//   }
-//   // if (AccessToLogin) {
-//   //   userDataSource.checkUserAuthentication(form.value);
-//   // }
-// };
+const handleLogin = () => {
+  let AccessToLogin = true;
+  if (!validEmail(form.value.email)) {
+    AccessToLogin = false;
+    error.value.email.status = true;
+    error.value.email.message = "Invalid email !!!";
+  } else {
+    AccessToLogin = true;
+    error.value.email.status = false;
+    error.value.email.message = "";
+  }
+  if (!validPassword(form.value.password)) {
+    AccessToLogin = false;
+    error.value.password.status = true;
+    error.value.password.message = "Password  must be more than 8 charecter";
+  } else {
+    AccessToLogin = true;
+    error.value.password.status = false;
+    error.value.password.message = "";
+  }
+  // if (AccessToLogin) {
+  //   userDataSource.checkUserAuthentication(form.value);
+  // }
+};
 </script>
 
 <template>
@@ -77,6 +77,7 @@ const error = ref({
         width="85px"
         height="30px"
         borderRadius="6px"
+        @click="handleLogin()"
       />
       <div
         class="w-100 app-flex app-flex-column app-justify-center app-align-center mt-10"
