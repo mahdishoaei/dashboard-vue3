@@ -91,8 +91,8 @@ const handleLogin = () => {
         <div class="app-flex mt-2">
           <img class="icon" src="/icons/instagram.svg" alt="image" />
           <img class="icon" src="/icons/youtube.svg" alt="image" />
-          <img class="icon" src="/icons/instagram.svg" alt="image" />
-          <img class="icon" src="/icons/instagram.svg" alt="image" />
+          <img class="icon" src="/icons/linkedin.svg" alt="image" />
+          <img class="icon" src="/icons/facebook.svg" alt="image" />
         </div>
       </div>
     </div>
