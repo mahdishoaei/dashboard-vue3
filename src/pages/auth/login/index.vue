@@ -54,7 +54,7 @@ const handleLogin = () => {
     </div>
     <div class="w-50 app-flex app-flex-column app-justify-center px-8">
       <span class="app-font-size-18 app-font-weight-500 app-color-primary pb-6"
-        >SignIn To Dashboard</span
+        >Sign In To Dashboard</span
       >
       <CoreInput
         class="mt-2 mb-2"
