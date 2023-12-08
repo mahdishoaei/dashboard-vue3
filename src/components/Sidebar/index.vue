@@ -88,8 +88,8 @@ const sidebarItems = ref([
   },
   {
     id: "5",
-    name: "warehouse",
-    path: "warehouse",
+    name: "Warehouse",
+    path: "Warehouse",
     icon: "/icons/warehouse.svg",
   },
   {

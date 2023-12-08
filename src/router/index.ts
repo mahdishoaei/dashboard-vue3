@@ -18,6 +18,36 @@ const routes: Array<RouteRecordRaw> = [
         name: "payment",
         component: () => import("@/pages/payment/index.vue"),
       },
+      {
+        path: "/employes",
+        name: "employes",
+        component: () => import("@/pages/employes/index.vue"),
+      },
+      {
+        path: "/permissions",
+        name: "permissions",
+        component: () => import("@/pages/permissions/index.vue"),
+      },
+      {
+        path: "/products",
+        name: "products",
+        component: () => import("@/pages/products/index.vue"),
+      },
+      {
+        path: "/tasks",
+        name: "tasks",
+        component: () => import("@/pages/tasks/index.vue"),
+      },
+      {
+        path: "/Warehouse",
+        name: "Warehouse",
+        component: () => import("@/pages/wareHouse/index.vue"),
+      },
+      {
+        path: "/setting",
+        name: "setting",
+        component: () => import("@/pages/setting/index.vue"),
+      },
     ],
   },
   {
