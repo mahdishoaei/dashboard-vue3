@@ -4,9 +4,6 @@
       {{ label }}
     </span>
     <input
-      :class="{
-        'core-input-error': error,
-      }"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       :type="type"
@@ -14,7 +11,7 @@
     />
     <span
       v-if="error"
-      class="app-font-size-12 app-font-weight-600 app-color-danger mt-2"
+      class="app-font-size-12 app-font-weight-500 app-color-danger mt-2"
     >
       {{ messageError }}
     </span>

@@ -1,11 +1,10 @@
 <script setup>
-import { ref } from "vue";
 import CoreInput from "@/components/CoreInput/index.vue";
 import CoreBtn from "@/components/CoreBtn/index.vue";
-import { validEmail, validPassword } from "@/utils/validate";
-// import { applicationUserData } from "@/stores/applicationUserData.ts";
 
-// const userDataSource = applicationUserData();
+import { ref } from "vue";
+import { validEmail, validPassword } from "@/utils/validate";
+
 const form = ref({
   email: "",
   password: "",
@@ -41,9 +40,6 @@ const handleLogin = () => {
     error.value.password.status = false;
     error.value.password.message = "";
   }
-  // if (AccessToLogin) {
-  //   userDataSource.checkUserAuthentication(form.value);
-  // }
 };
 </script>
 
