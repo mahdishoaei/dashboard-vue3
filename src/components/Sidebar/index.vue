@@ -7,18 +7,13 @@
     }"
     class="sidebar-container"
   >
-    <div class="d-flex w-100 justify-end px-2 py-2">
-      <BootstrapIconArrowLeft
-        @click="changeSidebarStatus"
-        v-if="isOpen"
-        class="app_pointer"
-      />
-      <BootstrapIconArrowRight
-        @click="changeSidebarStatus"
-        v-else
-        class="app_pointer"
-      />
+    <div
+      class="app-flex app-justify-end app-align-center px-3 py-3 app_pointer"
+    >
+      <i class="bi bi-x-lg" @click="changeSidebarStatus" v-if="isOpen"></i>
+      <i class="bi bi-arrow-right" @click="changeSidebarStatus" v-else></i>
     </div>
+
     <div class="app-flex app-flex-column app-justify-center app-align-center">
       <img src="@/assets/images/profile-men.jpg" class="profile-img" />
       <span class="app-font-size-12 app-font-weight-600 pt-2" v-if="isOpen"

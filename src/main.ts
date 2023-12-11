@@ -6,6 +6,7 @@ import Toast from "vue-toastification";
 
 import './registerServiceWorker'
 import './assets/scss/main.scss'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 const app = createApp(App)
 const pinia = createPinia()
