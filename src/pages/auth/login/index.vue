@@ -1,10 +1,10 @@
-<script setup>
+<script setup lang="ts">
 import CoreInput from "@/components/CoreInput/index.vue";
 import CoreBtn from "@/components/CoreBtn/index.vue";
 
 import { ref } from "vue";
 import { validEmail, validPassword } from "@/utils/validate";
-import { applicationUserData } from "@/stores/applicationUserData.ts";
+import { applicationUserData } from "@/stores/applicationUserData";
 
 const userDataSource = applicationUserData();
 const form = ref({

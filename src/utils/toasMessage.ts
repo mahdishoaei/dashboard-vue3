@@ -15,7 +15,7 @@ export const infoToast = (position: any, text: string) => {
         timeout: 3000,
         hideProgressBar: false,
     });
-}
+};
 
 export const warningToast = (position: any, text: string) => {
     toast.warning(text, {
@@ -23,7 +23,7 @@ export const warningToast = (position: any, text: string) => {
         timeout: 3000,
         hideProgressBar: false,
     });
-}
+};
 
 export const errorToast = (position: any, text: string) => {
     toast.error(text, {
@@ -31,4 +31,4 @@ export const errorToast = (position: any, text: string) => {
         timeout: 3000,
         hideProgressBar: false,
     });
-}
+};

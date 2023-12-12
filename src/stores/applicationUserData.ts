@@ -1,8 +1,8 @@
 import { defineStore } from "pinia";
 import { usersDS } from "@/stores/usersDS";
-import { errorToast } from "@/utils/toasMessage";
+import { errorToast, successToast } from "@/utils/toasMessage";
 import { generateToken } from "@/utils/generateToken";
-import { updateUser } from "@/api/users/index";
+// import { updateUser } from "@/api/users/index";
 import { setLocalStorage } from "@/utils/localStorageServices";
 
 export const applicationUserData = defineStore("user", {
@@ -25,6 +25,7 @@ export const applicationUserData = defineStore("user", {
           if (result.password == param.password) {
             this.authenticated = true;
             this.user = result;
+            successToast("bottom-center", "Wellcome to dashboard");
             // this.user.token = generateToken(30);
             // updateUser(this.user.id, this.user);
             // setLocalStorage("token", this.user.token);

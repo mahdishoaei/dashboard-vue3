@@ -3,6 +3,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css"
 
 import './registerServiceWorker'
 import './assets/scss/main.scss'
