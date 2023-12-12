@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { GetUsers } from "@/api/users";
+import { GetUsers } from "@/api/users/index";
 
 export const usersDS = defineStore("usersData", {
   state: () => ({
@@ -9,7 +9,7 @@ export const usersDS = defineStore("usersData", {
   actions: {
     async getUsers() {
       const response = await GetUsers();
-      console.log(response);
+      this.users = response
     },
   },
 });
