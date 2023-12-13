@@ -1,12 +1,12 @@
-<script setup lang="ts">
+<script setup>
 import CoreInput from "@/components/CoreInput/index.vue";
 import CoreBtn from "@/components/CoreBtn/index.vue";
 
 import { ref } from "vue";
 import { validEmail, validPassword } from "@/utils/validate";
-import { applicationUserData } from "@/stores/applicationUserData";
+import { userDS } from "@/stores/userDS";
 
-const userDataSource = applicationUserData();
+const userDSModule = userDS();
 const form = ref({
   email: "",
   password: "",
@@ -43,7 +43,7 @@ const handleLogin = () => {
     error.value.password.message = "";
   }
   if (AccessToLogin) {
-    userDataSource.checkUserAuthentication(form.value);
+    userDSModule.checkUserAuthentication(form.value);
   }
 };
 </script>
@@ -113,3 +113,4 @@ const handleLogin = () => {
   margin: 5px 5px;
 }
 </style>
+@/stores/userDS
