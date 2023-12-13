@@ -14,8 +14,8 @@ export const userDS = defineStore("user", {
 
   actions: {
     checkUserAuthentication(param) {
-      const usersDataSource = usersDS();
-      const users = usersDataSource.users;
+      const usersDSModule = usersDS();
+      const users = usersDSModule.users;
       const result = users.find((user) => {
         return user.email == param.email;
       });

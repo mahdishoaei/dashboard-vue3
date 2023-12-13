@@ -6,9 +6,9 @@
 import { onMounted } from "vue";
 import { usersDS } from "@/stores/usersDS";
 
-const UsersDS = usersDS();
+const usersDSModule = usersDS();
 
 onMounted(async () => {
-  await UsersDS.getUsers();
+  await usersDSModule.getUsers();
 });
 </script>

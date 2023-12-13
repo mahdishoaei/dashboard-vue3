@@ -11,9 +11,6 @@
 
 <script setup>
 import sidebar from "@/components/Sidebar/index.vue";
-import { usersDS } from "@/stores/usersDS";
-
-const UsersDS = usersDS()
 </script>
 
 <style lang="scss" scoped>
