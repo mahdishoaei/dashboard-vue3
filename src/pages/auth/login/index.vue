@@ -2,11 +2,13 @@
 import CoreInput from "@/components/CoreInput/index.vue";
 import CoreBtn from "@/components/CoreBtn/index.vue";
 
+import { useRouter } from "vue-router";
 import { ref } from "vue";
 import { validEmail, validPassword } from "@/utils/validate";
 import { userDS } from "@/stores/userDS";
 
 const userDSModule = userDS();
+const router = useRouter();
 const form = ref({
   email: "",
   password: "",
@@ -44,6 +46,9 @@ const handleLogin = () => {
   }
   if (AccessToLogin) {
     userDSModule.checkUserAuthentication(form.value);
+    if (userDSModule.authenticated) {
+      router.push("/dashboard");
+    }
   }
 };
 </script>
