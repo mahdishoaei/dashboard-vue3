@@ -25,17 +25,17 @@ export const applicationUserData = defineStore("user", {
           if (result.password == param.password) {
             this.authenticated = true;
             this.user = result;
-            successToast("bottom-center", "Wellcome to dashboard");
+            successToast("top-center", "Wellcome to dashboard");
             // this.user.token = generateToken(30);
             // updateUser(this.user.id, this.user);
             // setLocalStorage("token", this.user.token);
             // navigateTo("/dashboard");
           } else {
             this.authenticated = false;
-            errorToast("bottom-center", "Password is incorect!!!");
+            errorToast("top-center", "Password is incorect!!!");
           }
         } else {
-          errorToast("bottom-center", "User is not exist!!!");
+          errorToast("top-center", "User is not exist!!!");
         }
       },
   },
