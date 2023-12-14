@@ -3,6 +3,7 @@ export const applicationPath = {
   USERS: {
     GET: "/users",
     PUT: "/users",
+    PATH:"/users",
     POST: "/users",
     DELETE: "/users",
   },

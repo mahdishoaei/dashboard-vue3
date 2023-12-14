@@ -1,9 +1,12 @@
 import { defineStore } from "pinia";
+import { useRouter } from "vue-router";
 import { usersDS } from "@/stores/usersDS";
 import { errorToast, successToast } from "@/utils/toasMessage";
 import { generateToken } from "@/utils/generateToken";
-// import { updateUser } from "@/api/users/index";
+import { updateUser } from "@/api/users/put";
 import { setLocalStorage } from "@/utils/localStorageServices";
+
+const router = useRouter();
 
 export const applicationUserData = defineStore("user", {
   state: () => ({
@@ -20,16 +23,15 @@ export const applicationUserData = defineStore("user", {
         const result: any = users.find((user: any) => {
           return user.email == param.email;
         });
-        console.log(result);
-        if (result) {
-          if (result.password == param.password) {
+       if (result){
+           if (result.password == param.password) {
             this.authenticated = true;
-            this.user = result;
+            const soloUser = this.user = result;
             successToast("top-center", "Wellcome to dashboard");
-            // this.user.token = generateToken(30);
-            // updateUser(this.user.id, this.user);
-            // setLocalStorage("token", this.user.token);
-            // navigateTo("/dashboard");
+            soloUser.token = generateToken(30);
+            setLocalStorage("token", soloUser.token);
+            updateUser(soloUser.id, soloUser);
+            // router.push("/dashboard");
           } else {
             this.authenticated = false;
             errorToast("top-center", "Password is incorect!!!");
