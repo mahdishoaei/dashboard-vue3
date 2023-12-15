@@ -11,3 +11,19 @@ export const detectedUserByEmail = async (email) => {
     return false;
   }
 };
+
+export const detectedUserByToken = async (token) => {
+  const usersDSModule = usersDS();
+  if (token) {
+    const targetUser = await usersDSModule.users.find((user) => {
+      return user.token == token;
+    });
+    if (targetUser) {
+      return { flag: true, ...targetUser };
+    } else {
+      return { flag: false };
+    }
+  } else {
+    return { flag: false };
+  }
+};

@@ -3,16 +3,26 @@ import { errorToast, successToast } from "@/utils/toasMessage";
 import { generateToken } from "@/utils/generateToken";
 import { UpdateUser } from "@/api/users/index";
 import { detectedUserByEmail } from "@/utils/detectUser";
-import { setLocalStorage } from "@/utils/localStorageServices";
+import {
+  setLocalStorage,
+  removeLoacalStorage,
+} from "@/utils/localStorageServices";
 
 export const userDS = defineStore("user", {
   state: () => ({
     authenticated: false,
-    token: "",
     user: {},
   }),
 
   actions: {
+    updateAuthenticated(param) {
+      this.authenticated = param;
+    },
+
+    updateUserInClient(param) {
+      this.user = param;
+    },
+
     async checkUserAuthentication(param) {
       const result = await detectedUserByEmail(param.email);
       if (result.flag) {
@@ -30,6 +40,11 @@ export const userDS = defineStore("user", {
       } else {
         errorToast("top-center", "User not found please try again!");
       }
+    },
+
+    logOutUser() {
+      this.authenticated = false;
+      removeLoacalStorage("token");
     },
   },
 });
