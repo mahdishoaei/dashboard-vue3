@@ -6,7 +6,7 @@ export const detectedUserByEmail = async (email) => {
     return user.email == email;
   });
   if (targetUser) {
-    return true;
+    return { flag: true, ...targetUser };
   } else {
     return false;
   }

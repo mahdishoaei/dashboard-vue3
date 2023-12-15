@@ -15,7 +15,7 @@ export const userDS = defineStore("user", {
   actions: {
     async checkUserAuthentication(param) {
       const result = await detectedUserByEmail(param.email);
-      if (result) {
+      if (result.flag) {
         if (result.password == param.password) {
           this.authenticated = true;
           successToast("top-center", "The login operation was successful");

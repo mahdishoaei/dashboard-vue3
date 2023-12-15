@@ -45,10 +45,13 @@ const handleLogin = () => {
     error.value.password.message = "";
   }
   if (AccessToLogin) {
-    userDSModule.checkUserAuthentication(form.value);
-    if (userDSModule.authenticated) {
+    userDSModule.checkUserAuthentication(form.value).then((response) => {
+      if (userDSModule.authenticated) {
       router.push("/dashboard");
     }
+    }).catch((error) => {
+     error
+    });;
   }
 };
 </script>
