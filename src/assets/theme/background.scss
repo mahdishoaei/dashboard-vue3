@@ -18,7 +18,7 @@
 }
 .app-bg-gray{
     background: var(--gray-);
-    color: var(--dark-);
+    color: var(--white-);
     transition: 0.5s;
 }
 .app-bg-light{
@@ -36,9 +36,14 @@
     color: var(--white-);
     transition: 0.5s;
 }
-.app-bg-blue{
-    background: var(--blue-);
+.app-bg-info{
+    background: var(--info-);
     color: var(--white-);
+    transition: 0.5s;
+}
+.app-bg-warning{
+    background: var(--warning-);
+    color: var(--dark-);
     transition: 0.5s;
 }
 
