@@ -8,6 +8,8 @@
       @input="$emit('update:modelValue', $event.target.value)"
       :type="type"
       :placeholder="placeholder"
+      class="mt-2"
+      :disabled="disabled"
     />
     <span
       v-if="error"
@@ -32,6 +34,11 @@ const props = defineProps({
     required: false,
   },
   error: {
+    type: Boolean,
+    default: false,
+    required: false,
+  },
+  disabled: {
     type: Boolean,
     default: false,
     required: false,

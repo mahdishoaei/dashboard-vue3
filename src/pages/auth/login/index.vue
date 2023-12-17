@@ -82,7 +82,7 @@ const handleLogin = () => {
       <CoreBtn
         class="mt-4 app_pointer"
         background="outline-primary-hover"
-        name="submit"
+        name="Submit"
         width="85px"
         height="30px"
         borderRadius="6px"
