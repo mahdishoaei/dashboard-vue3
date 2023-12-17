@@ -15,10 +15,16 @@
     </div>
 
     <div class="app-flex app-flex-column app-justify-center app-align-center">
-      <img src="@/assets/images/profile-men.jpg" class="profile-img" />
-      <span class="app-font-size-12 app-font-weight-600 pt-2" v-if="isOpen"
-        >admin@yahoo.com</span
+      <CoreSpinner v-if="loading" />
+      <div
+        class="__application_animation app-flex app-flex-column app-justify-center app-align-center"
+        v-else
       >
+        <img src="@/assets/images/profile-men.jpg" class="profile-img" />
+        <span class="app-font-size-12 app-font-weight-600 pt-2" v-if="isOpen">{{
+          email
+        }}</span>
+      </div>
     </div>
     <div class="w-100 d-flex flex-column px-2 mt-10">
       <div
@@ -40,15 +46,21 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import CoreSpinner from "@/components/CoreSpinner/index.vue";
+
+import { computed, ref, onMounted } from "vue";
 import { applicationTheme } from "@/stores/applicationTheme";
 import { useRoute, useRouter } from "vue-router";
+import { usersDS } from "@/stores/usersDS";
 
 const Route = useRoute();
 const Router = useRouter();
 const ThemeDS = applicationTheme();
+const usersDSModule = usersDS();
 
 const isOpen = ref(true);
+const loading = ref(false);
+const email = ref("");
 
 const sidebarItems = ref([
   {
@@ -105,6 +117,15 @@ const changeSidebarStatus = () => {
 
 const ThemeStatus = computed(() => {
   return ThemeDS.theme;
+});
+
+onMounted(async () => {
+  loading.value = true;
+  setTimeout(() => {
+    const userInfo = usersDSModule.users[0];
+    email.value = userInfo.email;
+    loading.value = false;
+  }, 1000);
 });
 </script>
 

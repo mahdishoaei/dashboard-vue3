@@ -58,10 +58,10 @@ const handleLogin = () => {
 
 <template>
   <div class="login-page-container">
-    <div class="w-50 app-flex app-justify-center app-align-center">
+    <div class="w-60 app-flex app-justify-center app-align-center">
       <img src="/images/auth-bg.png" alt="image" />
     </div>
-    <div class="w-50 app-flex app-flex-column app-justify-center px-8">
+    <div class="w-40 app-flex app-flex-column app-justify-center px-8">
       <span class="app-font-size-18 app-font-weight-500 app-color-primary pb-6"
         >Sign In To Dashboard</span
       >
